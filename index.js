@@ -1,4 +1,40 @@
 
+
+let computerRoundsWon = 0;
+let userRoundsWon = 0;
+let roundsPlayed = 0;
+
+const score = document.querySelector('.score');
+const scoreMessage = document.querySelector('.scoreMessage');
+const finalScore = document.querySelector('.finalScore');
+scoreMessage.textContent = ''
+
+score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+
+
+const btnOne = document.querySelector('.btnOne');
+const btnTwo = document.querySelector('.btnTwo');
+const btnThree = document.querySelector('.btnThree');
+
+btnOne.addEventListener('click', () => {
+    playRound('rock', computerPlay())
+}); 
+
+btnTwo.addEventListener('click', () => {
+    playRound('paper', computerPlay())
+
+}); 
+
+btnThree.addEventListener('click', () => {
+    playRound('scissors', computerPlay())
+
+}); 
+
+
+
+
+
+
 function computerPlay() {
     let rock = "rock"; 
     let paper = "paper";
@@ -24,43 +60,70 @@ function getUserSelection() {
 }
 
 function playRound(userSelection, computerSelection) {
+
     if (userSelection == "rock" && computerSelection == "paper") {
-        console.log("Computer wins round.")
+        scoreMessage.textContent = ("Computer wins round.")
         computerRoundsWon++
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
     } else if (userSelection == "rock" && computerSelection == "scissors") {
-        console.log("User wins round.")
+        scoreMessage.textContent = ("User wins round.")
         userRoundsWon++
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
     } else if (userSelection == "paper" && computerSelection == "rock") {
-        console.log("User wins round.")
+        scoreMessage.textContent = ("User wins round.")
         userRoundsWon++
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
     } else if (userSelection == "paper" && computerSelection == "scissors") {
-        console.log("Computer wins round.")
+        scoreMessage.textContent = ("Computer wins round.")
         computerRoundsWon++
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
     } else if (userSelection == "scissors" && computerSelection == "rock") {
-        console.log("Computer wins round.")
+        scoreMessage.textContent = ("Computer wins round.")
         computerRoundsWon++
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
     } else if (userSelection == "scissors" && computerSelection == "paper") {
-        console.log("User wins round.")
+        scoreMessage.textContent = ("User wins round.")
         userRoundsWon++
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
     } else if (userSelection == computerSelection) {
-        console.log("Round is a draw.")
+        scoreMessage.textContent = ("Round is a draw.")
+        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
+    }
+
+    if (userRoundsWon == 3) {
+
+        finalScore.textContent ="User has won";
+    }
+    if (computerRoundsWon == 3) {
+        finalScore.textContent = "Computer has won";
     }
 
 }
 
-let computerRoundsWon = 0
-let userRoundsWon = 0
 
+
+
+/*
 function mainGame() {
     for(let i=0; i <5; i++) {
-        playRound(getUserSelection(), computerPlay()) 
+        playRound(getUserSelection(), computerPlay()); 
+        
     }
-    alert("FINAL SCORE: User: " + userRoundsWon + " Computer: " + computerRoundsWon)
+    alert("FINAL SCORE: User: " + userRoundsWon + " Computer: " + computerRoundsWon);
 }
+
+
+mainGame()
+
+*/
+
+
+
+

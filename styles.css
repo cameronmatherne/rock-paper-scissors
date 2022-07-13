@@ -1,0 +1,35 @@
+body {
+    background-color: bisque;
+
+}
+.wrapper {
+    text-align: center;
+    padding: 100px;
+    margin: 24px;
+
+
+}
+
+.title {
+    text-align: center;
+    color: black;
+    font-size: 48px;
+    font-family: Arial;
+    margin: 36px;
+}
+
+.container button {
+    margin: 16px;
+}
+
+img {
+    width: 84px;
+    height: 84px;
+
+}
+
+.lowerHalf {
+    font-size: 24px;
+    padding: 12px;
+    margin: 20px;
+}
