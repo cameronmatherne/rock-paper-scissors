@@ -45,7 +45,7 @@ body {
 
 .btn:hover {
     scale: 1.1;
-    border: 2px solid gold;
+    border: 2px solid rgb(177, 59, 59);
     box-shadow: grey 0px 7px 29px 0px;
 
 }
@@ -55,7 +55,9 @@ body {
     padding: 12px;
     margin: 20px;
     display: flex;
-    gap: 32px; 
+    padding-left: 40px;
+    padding-right: 40px; 
+    gap: 40px; 
     border: 2x solid black; 
     align-items: center;
     justify-content: center;
@@ -67,7 +69,7 @@ body {
 
 .reset {
     margin-top: 40px;
-    font-size: 30px; 
+    font-size: 40px; 
     border: 1px solid black; 
     font-family: 'Montserrat', sans-serif;
     color: white;
@@ -77,6 +79,5 @@ body {
 
 }
 
-.reset:hover {
-    opacity: 1;
-}
+
+

@@ -6,7 +6,11 @@ let roundsPlayed = 0;
 const score = document.querySelector('.score');
 const scoreMessage = document.querySelector('.scoreMessage');
 const finalScore = document.querySelector('.finalScore');
+
+const click = new Audio("sounds/click.wav")
 scoreMessage.textContent = ''
+
+
 
 score.textContent ='USER SCORE: ' + userRoundsWon + "      " + 'COMPUTER SCORE: ' + computerRoundsWon;
 
@@ -16,17 +20,24 @@ const btnThree = document.querySelector('#btnThree');
 
 btnOne.addEventListener('click', () => {
     playRound('rock', computerPlay())
+    playAudio();
 }); 
 
 btnTwo.addEventListener('click', () => {
     playRound('paper', computerPlay())
-
+    playAudio();
 }); 
 
 btnThree.addEventListener('click', () => {
     playRound('scissors', computerPlay())
+    playAudio();
 
 }); 
+
+function playAudio() {
+    var audio = new Audio("sounds/click.wav");
+    audio.play();
+}
 
 function computerPlay() {
     let rock = "rock"; 
@@ -56,6 +67,15 @@ function updateScore() {
     score.textContent ='USER SCORE: ' + userRoundsWon + "    " + 'COMPUTER SCORE: ' + computerRoundsWon;
 }
 
+function resetGame() {
+    const resetBtn = document.createElement("button");
+    resetBtn.innerHTML = "Reset game?";
+    document.getElementById("lowerHalf").appendChild(resetBtn);
+    resetBtn.addEventListener('click', () => {
+        document.location.reload();
+    }); 
+
+}
 function playRound(userSelection, computerSelection) {
 
     if (userSelection == "rock" && computerSelection == "paper") {
@@ -95,7 +115,6 @@ function playRound(userSelection, computerSelection) {
     }
 
     if (userRoundsWon == 3) {
-
         finalScore.textContent ="User has won";
         resetGame();
     }
@@ -104,15 +123,4 @@ function playRound(userSelection, computerSelection) {
         resetGame();
     }
 
-}
-
-function resetGame() {
-    const resetBtn = document.createElement('button');
-    resetBtn.innerHTML = "Reset game?";
-    document.body.appendChild(btn);
-    resetBtn.addEventListener('click', () => {
-        computerRoundsWon = 0;
-        userRoundsWon = 0;
-        roundsPlayed = 0;
-    })
 }
