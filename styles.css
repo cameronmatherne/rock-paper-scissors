@@ -3,7 +3,7 @@ url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap')
 
 
 body {
-    background-color: gray;
+    background-color:  white;
  
 }
 
@@ -14,12 +14,16 @@ body {
 
 .title {
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px 8px black;
+    color: white;  
+    text-shadow: 1px 1px 8px rgb(44, 42, 42);
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 38px;
     margin: 36px;
 
+}
+
+.middle {
+    color: rgb(177, 59, 59);
 }
 
 .buttons {
@@ -33,11 +37,16 @@ body {
 
 }
 
-img {
-    border: 2px solid red;
-    width: 150px;
-    height: 150px;
-    
+.btn {
+   border: 1px solid black;  
+   transition: 0.5s; 
+
+}
+
+.btn:hover {
+    scale: 1.1;
+    border: 2px solid gold;
+    box-shadow: grey 0px 7px 29px 0px;
 
 }
 
@@ -45,8 +54,29 @@ img {
     font-size: 24px;
     padding: 12px;
     margin: 20px;
-
+    display: flex;
+    gap: 32px; 
+    border: 2x solid black; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
     color: white;
     text-shadow: 2px 2px 8px black;
     font-family: 'Montserrat', sans-serif;
+}
+
+.reset {
+    margin-top: 40px;
+    font-size: 30px; 
+    border: 1px solid black; 
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    opacity: 0.6;
+    transition: .5s;
+    
+
+}
+
+.reset:hover {
+    opacity: 1;
 }

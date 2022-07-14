@@ -8,8 +8,7 @@ const scoreMessage = document.querySelector('.scoreMessage');
 const finalScore = document.querySelector('.finalScore');
 scoreMessage.textContent = ''
 
-score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
-
+score.textContent ='USER SCORE: ' + userRoundsWon + "      " + 'COMPUTER SCORE: ' + computerRoundsWon;
 
 const btnOne = document.querySelector('#btnOne');
 const btnTwo = document.querySelector('#btnTwo');
@@ -53,55 +52,67 @@ function getUserSelection() {
    return final;
 }
 
+function updateScore() {
+    score.textContent ='USER SCORE: ' + userRoundsWon + "    " + 'COMPUTER SCORE: ' + computerRoundsWon;
+}
+
 function playRound(userSelection, computerSelection) {
 
     if (userSelection == "rock" && computerSelection == "paper") {
         scoreMessage.textContent = ("Computer wins round.")
         computerRoundsWon++
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+        updateScore();
 
     } else if (userSelection == "rock" && computerSelection == "scissors") {
         scoreMessage.textContent = ("User wins round.")
         userRoundsWon++
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+       updateScore();
 
     } else if (userSelection == "paper" && computerSelection == "rock") {
         scoreMessage.textContent = ("User wins round.")
         userRoundsWon++
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+        updateScore();
 
     } else if (userSelection == "paper" && computerSelection == "scissors") {
         scoreMessage.textContent = ("Computer wins round.")
         computerRoundsWon++
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+        updateScore();
 
     } else if (userSelection == "scissors" && computerSelection == "rock") {
         scoreMessage.textContent = ("Computer wins round.")
         computerRoundsWon++
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+        updateScore();
 
     } else if (userSelection == "scissors" && computerSelection == "paper") {
         scoreMessage.textContent = ("User wins round.")
         userRoundsWon++
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+        updateScore();
 
     } else if (userSelection == computerSelection) {
         scoreMessage.textContent = ("Round is a draw.")
-        score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
+        updateScore();
 
     }
 
     if (userRoundsWon == 3) {
 
         finalScore.textContent ="User has won";
+        resetGame();
     }
     if (computerRoundsWon == 3) {
         finalScore.textContent = "Computer has won";
+        resetGame();
     }
 
 }
 
-
-
-
-
+function resetGame() {
+    const resetBtn = document.createElement('button');
+    resetBtn.innerHTML = "Reset game?";
+    document.body.appendChild(btn);
+    resetBtn.addEventListener('click', () => {
+        computerRoundsWon = 0;
+        userRoundsWon = 0;
+        roundsPlayed = 0;
+    })
+}
