@@ -1,5 +1,4 @@
 
-
 let computerRoundsWon = 0;
 let userRoundsWon = 0;
 let roundsPlayed = 0;
@@ -12,9 +11,9 @@ scoreMessage.textContent = ''
 score.textContent ='User score: ' + userRoundsWon + "    " + 'Computer Score: ' + computerRoundsWon;
 
 
-const btnOne = document.querySelector('.btnOne');
-const btnTwo = document.querySelector('.btnTwo');
-const btnThree = document.querySelector('.btnThree');
+const btnOne = document.querySelector('#btnOne');
+const btnTwo = document.querySelector('#btnTwo');
+const btnThree = document.querySelector('#btnThree');
 
 btnOne.addEventListener('click', () => {
     playRound('rock', computerPlay())
@@ -29,11 +28,6 @@ btnThree.addEventListener('click', () => {
     playRound('scissors', computerPlay())
 
 }); 
-
-
-
-
-
 
 function computerPlay() {
     let rock = "rock"; 
@@ -107,22 +101,6 @@ function playRound(userSelection, computerSelection) {
 
 }
 
-
-
-
-/*
-function mainGame() {
-    for(let i=0; i <5; i++) {
-        playRound(getUserSelection(), computerPlay()); 
-        
-    }
-    alert("FINAL SCORE: User: " + userRoundsWon + " Computer: " + computerRoundsWon);
-}
-
-
-mainGame()
-
-*/
 
 
 
