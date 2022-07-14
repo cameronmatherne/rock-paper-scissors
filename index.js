@@ -11,8 +11,8 @@ const click = new Audio("sounds/click.wav")
 scoreMessage.textContent = ''
 
 
-
-score.textContent ='USER SCORE: ' + userRoundsWon + "      " + 'COMPUTER SCORE: ' + computerRoundsWon;
+score.innerHTML ='USER SCORE: ' + userRoundsWon + "      " + 'COMPUTER SCORE: ' + computerRoundsWon;
+score.style.color = "rgb(177, 59, 59)";
 
 const btnOne = document.querySelector('#btnOne');
 const btnTwo = document.querySelector('#btnTwo');
@@ -64,13 +64,16 @@ function getUserSelection() {
 }
 
 function updateScore() {
-    score.textContent ='USER SCORE: ' + userRoundsWon + "    " + 'COMPUTER SCORE: ' + computerRoundsWon;
+    score.innerHTML  ='USER SCORE: ' + userRoundsWon + "    " + 'COMPUTER SCORE: ' + computerRoundsWon;
 }
 
 function resetGame() {
     const resetBtn = document.createElement("button");
     resetBtn.innerHTML = "Reset game?";
-    document.getElementById("lowerHalf").appendChild(resetBtn);
+    document.getElementById("lowerHalf").appendChild(resetBtn);   
+    resetBtn.style.fontSize = '48px';
+    resetBtn.style.marginTop = '30px';
+
     resetBtn.addEventListener('click', () => {
         document.location.reload();
     }); 

@@ -15,7 +15,7 @@ body {
 .title {
     text-align: center;
     color: white;  
-    text-shadow: 1px 1px 8px rgb(44, 42, 42);
+    text-shadow: 1px 1px 12px rgb(44, 42, 42);
     font-family: 'Montserrat', sans-serif;
     font-size: 38px;
     margin: 36px;
@@ -63,7 +63,7 @@ body {
     justify-content: center;
     flex-direction: column; 
     color: white;
-    text-shadow: 2px 2px 8px black;
+    text-shadow: 2px 1px 14px rgba(0, 0, 0, 0.659);
     font-family: 'Montserrat', sans-serif;
 }
 
